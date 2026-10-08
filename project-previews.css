@@ -1,0 +1,8 @@
+.project-preview { margin: 0; border-bottom: 1px solid var(--color-border); }
+.project-preview__link { display: block; position: relative; background: var(--color-surface-2); }
+.project-preview__link img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: contain; }
+.project-preview__action { position: absolute; right: 12px; bottom: 12px; padding: 7px 11px; border-radius: 6px; background: #0b0c0f; color: #e8e9ec; font-size: .75rem; border: 1px solid #545963; }
+.project-preview__link:hover .project-preview__action { color: var(--color-accent); }
+.project-preview__link:focus-visible { outline: 3px solid var(--color-accent); outline-offset: -3px; }
+.project-preview figcaption { padding: 10px 16px; font-size: .75rem; color: #aeb3bf; }
+.project-preview__extra { display: block; width: fit-content; margin-top: 16px; color: var(--color-accent); font-size: .875rem; text-decoration: underline; text-underline-offset: 4px; }
