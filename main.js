@@ -1,5 +1,5 @@
 /**
- * main.js — Alex Mercer Portfolio
+ * main.js — Ghazal ALsharif Portfolio
  *
  * Responsibilities:
  *  1. Scroll progress bar
@@ -75,3 +75,24 @@ const sectionObserver = new IntersectionObserver((entries) => {
 });
 
 sections.forEach(sec => sectionObserver.observe(sec));
+// Mobile navigation retains ordinary links when scripting is unavailable.
+const nav = document.querySelector('.nav');
+const menuToggle = document.querySelector('.nav__toggle');
+if (nav && menuToggle) {
+  nav.classList.add('nav--enhanced');
+  const closeMenu = () => {
+    nav.classList.remove('nav--open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  };
+  menuToggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('nav--open');
+    menuToggle.setAttribute('aria-expanded', String(open));
+  });
+  nav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+  nav.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && nav.classList.contains('nav--open')) {
+      closeMenu();
+      menuToggle.focus();
+    }
+  });
+}
